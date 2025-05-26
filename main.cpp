@@ -306,15 +306,18 @@ void zad12()
          if (liczba[kolumna][wiersz] == 0 )
          {
            liczba[kolumna][wiersz] = 1;
-           file << liczba[kolumna][wiersz] << ';';
          }
          else
          {
              liczba[kolumna][wiersz] = 0;
-             file <<  liczba[kolumna][wiersz] << ';';
          }
 
-          if ( i == 2 || i == 5 || i == 8 )
+     }
+
+     for (int j = 0; j < 9; j++)
+     {
+         file << liczba[0][j] << ';';
+            if ( j == 2 || j == 5 || j == 8 )
          {
              file << endl;
          }
