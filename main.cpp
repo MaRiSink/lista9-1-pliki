@@ -128,7 +128,7 @@ void zad7()
     rand();
 
 
-    for (int i = 0; i > -1; ++i)
+    for (;;)
     {
       int j = rand() % 10;
 
@@ -161,10 +161,11 @@ void zad8()
     srand(time(NULL));
     rand();
 
+    int j;
 
-    for (int i = 0; i > -1; ++i)
+    for (;;)
     {
-      int j = rand() % 10;
+      j = rand() % 10;
 
       if ( j % 2 != 0)
       {
@@ -183,8 +184,144 @@ void zad8()
 
 }
 
+void zad10()
+{
+    ofstream file ("zadanie10.csv");
+    if (file.is_open())
+       {
+            cout << " Plik zostal otworzony ";
+       }
+
+    int s;
+    srand(time(NULL));
+    rand();
+
+    for (int i = 1; i < 13; ++i)
+    {
+        s = rand() % 1001;
+        if (i % 4 == 0)
+        {
+        file << s << endl;
+        }
+        else
+        {
+        file << s << ',';
+        }
+
+    }
+
+     file.close();
+
+}
+
+void zad11a()
+{
+    //a
+    srand(time(NULL));
+    rand();
+    ofstream fileA ("zadanie11a.csv");
+
+      if (fileA.is_open())
+       {
+            cout << " Plik zostal otworzony ";
+       }
+
+    for (int i = 1; i <= 16; ++i)
+        {
+        int a = rand() % 100;
+        int b = rand() % 1000;
+        fileA << a << "," << b;
+        fileA << ";";
+        if ( i % 4 == 0)
+        {
+            fileA << endl;
+        }
+        }
+
+}
+
+void zad11b()
+{
+     srand(time(NULL));
+    rand();
+    ofstream fileB ("zadanie11b.csv");
+
+      if (fileB.is_open())
+       {
+            cout << " Plik zostal otworzony ";
+       }
+
+    for (int i = 1; i <= 16; ++i)
+        {
+        int a = rand() % 100;
+        int b = rand() % 1000;
+        fileB << a << ' ' << b;
+        fileB << ";";
+        if ( i % 4 == 0)
+        {
+            fileB << endl;
+        }
+        }
+}
+
+void zad11c()
+{
+     srand(time(NULL));
+    rand();
+    ofstream fileC ("zadanie11c.csv");
+
+      if (fileC.is_open())
+       {
+            cout << " Plik zostal otworzony ";
+       }
+
+    for (int i = 1; i <= 16; ++i)
+        {
+        int a = rand() % 100;
+        int b = rand() % 1000;
+        fileC << a << endl << b;
+        fileC << ";";
+        if ( i % 4 == 0)
+        {
+            fileC << endl;
+        }
+        }
+}
+
+void zad12()
+{
+     ofstream file ("zadanie12.csv");
+
+     int wiersz;
+     int kolumna;
+     int liczba[3][3] = {};
+
+     for (int i = 0; i < 9; i++)
+     {
+         cout << "Podaj wiersz: ";
+         cin >> wiersz;
+         cout << "Podaj kolumne: ";
+         cin >> kolumna;
+
+         if (liczba[kolumna][wiersz] == 0 )
+         {
+           liczba[kolumna][wiersz] = 1;
+           file << liczba[kolumna][wiersz] << ';';
+         }
+         else
+         {
+             liczba[kolumna][wiersz] = 0;
+             file <<  liczba[kolumna][wiersz] << ';';
+         }
+
+          if ( i == 2 || i == 5 || i == 8 )
+         {
+             file << endl;
+         }
+     }
+}
+
 int main()
 {
-
-
+    zad12();
 }
